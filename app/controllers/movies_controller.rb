@@ -41,13 +41,13 @@ class MoviesController < ApplicationController
   #   end
   # end
 
-  def destroy
-    @movie.destroy!
+  # def destroy
+  #   @movie.destroy!
 
-    respond_to do |format|
-      format.html { redirect_to movies_url, notice: "Movie was successfully destroyed." }
-    end
-  end
+  #   respond_to do |format|
+  #     format.html { redirect_to movies_url, notice: "Movie was successfully destroyed." }
+  #   end
+  # end
 
   private
 
