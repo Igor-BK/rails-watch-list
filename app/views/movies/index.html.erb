@@ -1,14 +1,22 @@
-<p style="color: green"><%= notice %></p>
+<div class="container">
+  <p style="color: green"><%= notice %></p>
 
-<h1>Movies</h1>
+  <h1>Movies</h1>
 
-<div id="movies">
-  <% @movies.each do |movie| %>
-    <%= render movie %>
-    <p>
-      <%= link_to "Show this movie", movie %>
-    </p>
-  <% end %>
+  <div id="movies">
+    <% @movies.each do |movie| %>
+      <div class="card">
+        <img class="card-img-top" src="<%= movie.poster_url %>" alt="<%= movie.title %>">
+        <div class="card-body">
+          <h5 class="card-title"><%= movie.title %></h5>
+          <p class="card-text"><%= movie.overview  %></p>
+        </div>
+      </div>
+      <p>
+        <%= link_to "Show this movie", movie, class:"btn btn-outline-info" %>
+      </p>
+    <% end %>
+  </div>
+
+  <%= link_to "Go to your lists", lists_path, class:"btn btn-outline-primary" %>
 </div>
-
-<%= link_to "Go to your lists", lists_path %>

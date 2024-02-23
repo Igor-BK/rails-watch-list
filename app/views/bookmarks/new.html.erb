@@ -1,7 +1,9 @@
+<div class="container">
 <h1>Add list</h1>
 <%= simple_form_for [@list, @bookmark] do |f| %>
   <%= f.input :movie_id, collection: Movie.all %>
   <%= f.input :comment %>
   <%= f.button :submit %>
 <% end %>
-<%= link_to "Back to lists ?", lists_path %>
+<%= link_to "Back to lists ?", lists_path, class:"btn btn-outline-primary" %>
+</div>
