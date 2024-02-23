@@ -5,6 +5,7 @@
 <li><%= bookmark.movie.rating %></li>
 <li><%= bookmark.movie.overview %></li>
 <li><%= bookmark.comment %></li>
+ <%= link_to "Delete this movie", bookmark_path(bookmark), data: {turbo_method: :delete, turbo_confirm: "Are you sure ?"}  %>
 <% end %>
 </ul>
 <%= link_to "Back to lists ?", lists_path %>
