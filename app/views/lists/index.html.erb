@@ -2,17 +2,33 @@
 <p style="color: green"><%= notice %></p>
 
 <h1>Lists</h1>
-
+<div class="cards">
+  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://cdn.pixabay.com/photo/2012/04/13/12/25/polaroid-32180_1280.png)">
 <div id="lists">
   <% @lists.each do |list| %>
     <%= render list %>
+    </div>
+    </div>
     <p>
+    <%= link_to "New list", new_list_path, class:"btn btn-outline-success" %>
+<%= link_to "Back to the movies", movies_path, class:"btn btn-outline-primary" %>
       <%= link_to "Show this list", list, class:"btn btn-outline-info" %>
       <%= link_to "Delete this list", list_path(list), data: {turbo_method: :delete, turbo_confirm: "Are you sure ?"}, class:"btn btn-outline-danger" %>
     </p>
   <% end %>
 </div>
-
-<%= link_to "New list", new_list_path, class:"btn btn-outline-success" %>
-<%= link_to "Back to the movies", movies_path, class:"btn btn-outline-primary" %>
 </div>
+<%#
+<div class="cards">
+  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://cdn.pixabay.com/photo/2012/04/13/12/25/polaroid-32180_1280.png)">
+    Breakfast
+  </div>
+
+  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/lunch.jpg)">
+    Lunch
+  </div>
+
+  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/dinner.jpg)">
+    Dinner
+  </div>
+</div> %>
